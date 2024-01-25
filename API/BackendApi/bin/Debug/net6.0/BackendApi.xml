@@ -4,6 +4,16 @@
         <name>BackendApi</name>
     </assembly>
     <members>
+        <member name="M:BackendApi.Controllers.BudgetController.GetAll">
+            <summary>
+            Вывод информации о бюджете
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.BudgetController.GetById(System.Int32)">
+            <summary>
+            Вывод бюджета по ID
+            </summary>
+        </member>
         <member name="M:BackendApi.Controllers.BudgetController.Add(BackendApi.Contracts.Budget.CreateBudgetRequest)">
              <summary>
              Создание бюджета 
@@ -19,8 +29,43 @@
                  }
             
              </remarks>
-             <param name="model">Бюджет</param>
+             <param name="budget">Бюджет</param>
              <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.BudgetController.Update(BackendApi.Models.Budget)">
+             <summary>
+             Обновление записи бюджета
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "Start_date" : 22.09.2003,
+                    "End_date" : 24.10.2003,
+                    "User_id" : 5549,
+                    "Size" : 78342
+                 }
+            
+             </remarks>
+             <param name="budget">Бюджет</param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.BudgetController.Delete(System.Int32)">
+            <summary>
+            Удаление записи бюджета
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.CategoryController.GetAll">
+            <summary>
+            Вывод информации о категориях
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.CategoryController.GetById(System.Int32)">
+            <summary>
+            Вывод категорий по ID
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.CategoryController.Add(BackendApi.Contracts.Category.CreateCategoryRequest)">
              <summary>
@@ -34,8 +79,39 @@
                  }
             
              </remarks>
-             <param name="model">Категории</param>
+             <param name="category">Категории</param>
              <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.CategoryController.Update(BackendApi.Models.CategoryType)">
+             <summary>
+             Обновление записи категорий
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "Name" : "Образование"
+                 }
+            
+             </remarks>
+             <param name="category">Категории</param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.CategoryController.Delete(System.Int32)">
+            <summary>
+            Удаление записи о категориях
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.LimitController.GetAll">
+            <summary>
+            Вывод информации о лимите
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.LimitController.GetById(System.Int32)">
+            <summary>
+            Вывод лимита по ID
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.LimitController.Add(BackendApi.Contracts.Limit.CreateLimitRequest)">
              <summary>
@@ -54,12 +130,49 @@
                  }
             
              </remarks>
-             <param name="model">Лимит</param>
+             <param name="limit">Лимит</param>
              <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.LimitController.Update(BackendApi.Models.Limit)">
+             <summary>
+             Обновление записи о лимите
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "User_id" : 9843,
+                    "Type" : "Продукты",
+                    "Date_time" : 08.03.2017,
+                    "Sum" : 3274,
+                    "Comment" : "Операция прошла успешна",
+                    "Categories_id" : 43857
+                 }
+            
+             </remarks>
+             <param name="limit">Лимит</param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.LimitController.Delete(System.Int32)">
+            <summary>
+            Удаление записи о лимите
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.OperationController.GetAll">
+            <summary>
+            Вывод информации об операции
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.OperationController.GetById(System.Int32)">
+            <summary>
+            Вывод операции по ID
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.OperationController.Add(BackendApi.Contracts.Operation.CreateOperationRequest)">
              <summary>
-             Создание Операции
+             Создание операции
              </summary>
              <remarks>
              Пример запроса:
@@ -74,12 +187,13 @@
                  }
             
              </remarks>
-             <param name="model">Операции</param>
+             <param name="operation">Операция</param>
              <returns></returns>
+            
         </member>
         <member name="M:BackendApi.Controllers.OperationController.Update(BackendApi.Contracts.Operation.CreateOperationRequest)">
              <summary>
-             Создание Операции
+             Обновление записи операции
              </summary>
              <remarks>
              Пример запроса:
@@ -94,8 +208,24 @@
                  }
             
              </remarks>
-             <param name="model">Операции</param>
+             <param name="operation">Операция</param>
              <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.OperationController.Delete(System.Int32)">
+            <summary>
+            Удаление записи об операции
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.TransactionController.GetAll">
+            <summary>
+            Вывод информации о транзакции
+            </summary>
+        </member>
+        <member name="M:BackendApi.Controllers.TransactionController.GetById(System.Int32)">
+            <summary>
+            Вывод Транзакции по ID
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.TransactionController.Add(BackendApi.Contracts.Transaction.CreateTransactionRequest)">
              <summary>
@@ -113,24 +243,44 @@
                  }
             
              </remarks>
-             <param name="model">Триназакция</param>
+             <param name="transaction">Триназакция</param>
              <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.TransactionController.Update(BackendApi.Models.Transaction)">
+             <summary>
+             Обновление записи транзакции
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "User_id" : 4326,
+                    "Income" : 3443,
+                    "Expenses" : -12345,
+                    "Date_time" : 2024-01-19T08:57:13.353Z,
+                    "Categories_id" : 438054
+                 }
+            
+             </remarks>
+             <param name="transaction">Транзакция</param>
+             <returns></returns>
+             
+        </member>
+        <member name="M:BackendApi.Controllers.TransactionController.Delete(System.Int32)">
+            <summary>
+            Удаление записи транзакции
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.UserController.GetAll">
             <summary>
             Вывод информации о пользователе
             </summary>
-            /// <remarks>
-             Пример запроса:
-                    {
-                        "userName" : "Bacok",
-                        "age" : 18,
-                        "passwords" : "12345",
-                        "email" : "Иванов@gmail.com"
-                    }
-            </remarks>
-            <param name="model">Пользователь</param>
-            <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.UserController.GetById(System.Int32)">
+            <summary>
+            Вывод пользователя по ID
+            </summary>
         </member>
         <member name="M:BackendApi.Controllers.UserController.Add(BackendApi.Contracts.User.CreateUserRequest)">
              <summary>
@@ -147,8 +297,33 @@
                  }
             
              </remarks>
-             <param name="model">Пользователь</param>
+             <param name="user">Пользователь</param>
              <returns></returns>
+            
+        </member>
+        <member name="M:BackendApi.Controllers.UserController.Update(BackendApi.Contracts.User.GetUserResponse)">
+             <summary>
+             Обновление записи пользователя
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "userName" : "Bacok",
+                    "age" : 18,
+                    "passwords" : "12345",
+                    "email" : "Иванов@gmail.com"
+                 }
+            
+             </remarks>
+             <param name="user">Пользователь</param>
+             <returns></returns>
+             
+        </member>
+        <member name="M:BackendApi.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Удаление записи пользователя
+            </summary>
         </member>
     </members>
 </doc>

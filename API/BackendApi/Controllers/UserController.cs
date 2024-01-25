@@ -21,9 +21,7 @@ namespace BackendApi.Controllers
 
         /// <summary>
         /// Вывод информации о пользователе
-        /// </summary
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll() 
         {
@@ -31,6 +29,9 @@ namespace BackendApi.Controllers
             return Ok(users);
         }
 
+        /// <summary>
+        /// Вывод пользователя по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -56,9 +57,9 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Пользователь</param>
+        /// <param name="user">Пользователь</param>
         /// <returns></returns>
-
+        ///
         // POST api/<UsersController>
         [HttpPost]
         public IActionResult Add(CreateUserRequest user)
@@ -69,6 +70,24 @@ namespace BackendApi.Controllers
             return Ok(userDto);
         }
 
+        /// <summary>
+        /// Обновление записи пользователя
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     {
+        ///        "userName" : "Bacok",
+        ///        "age" : 18,
+        ///        "passwords" : "12345",
+        ///        "email" : "Иванов@gmail.com"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="user">Пользователь</param>
+        /// <returns></returns>
+        /// 
+        // PUT api/<AdStatusConroller>
         [HttpPut]
         public IActionResult Update(GetUserResponse user)
         {
@@ -78,6 +97,9 @@ namespace BackendApi.Controllers
             return Ok(userDto);
         }
 
+        /// <summary>
+        /// Удаление записи пользователя
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

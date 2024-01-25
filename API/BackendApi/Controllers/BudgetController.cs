@@ -17,6 +17,9 @@ namespace BackendApi.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Вывод информации о бюджете
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -24,6 +27,9 @@ namespace BackendApi.Controllers
             return Ok(Budget);
         }
 
+        /// <summary>
+        /// Вывод бюджета по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -49,9 +55,9 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Бюджет</param>
+        /// <param name="budget">Бюджет</param>
         /// <returns></returns>
-
+        ///
         // POST api/<UsersController>
         [HttpPost]
         public IActionResult Add(CreateBudgetRequest budget)
@@ -62,6 +68,24 @@ namespace BackendApi.Controllers
             return Ok(budgetsDto);
         }
 
+        /// <summary>
+        /// Обновление записи бюджета
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     {
+        ///        "Start_date" : 22.09.2003,
+        ///        "End_date" : 24.10.2003,
+        ///        "User_id" : 5549,
+        ///        "Size" : 78342
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="budget">Бюджет</param>
+        /// <returns></returns>
+        ///
+        // POST api/<UsersController>
         [HttpPut]
         public IActionResult Update(Budget budget)
         {
@@ -71,6 +95,9 @@ namespace BackendApi.Controllers
             return Ok(budgetsDto);
         }
 
+        /// <summary>
+        /// Удаление записи бюджета
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

@@ -17,6 +17,9 @@ namespace BackendApi.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Вывод информации об операции
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -24,6 +27,9 @@ namespace BackendApi.Controllers
             return Ok(operation);
         }
 
+        /// <summary>
+        /// Вывод операции по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -36,7 +42,7 @@ namespace BackendApi.Controllers
         }
 
         /// <summary>
-        /// Создание Операции
+        /// Создание операции
         /// </summary>
         /// <remarks>
         /// Пример запроса:
@@ -51,11 +57,10 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Операции</param>
+        /// <param name="operation">Операция</param>
         /// <returns></returns>
-
+        ///
         // POST api/<UsersController>
-
         [HttpPost]
         public IActionResult Add(CreateOperationRequest operation)
         {
@@ -66,7 +71,7 @@ namespace BackendApi.Controllers
         }
 
         /// <summary>
-        /// Создание Операции
+        /// Обновление записи операции
         /// </summary>
         /// <remarks>
         /// Пример запроса:
@@ -81,10 +86,10 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Операции</param>
+        /// <param name="operation">Операция</param>
         /// <returns></returns>
-
-        // POST api/<UsersController>
+        ///
+        // PUT api/<UsersController>
         [HttpPut]
         public IActionResult Update(CreateOperationRequest operation)
         {
@@ -94,6 +99,9 @@ namespace BackendApi.Controllers
             return Ok(operationDto);
         }
 
+        /// <summary>
+        /// Удаление записи об операции
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

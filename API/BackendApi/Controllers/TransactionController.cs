@@ -18,6 +18,9 @@ namespace BackendApi.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Вывод информации о транзакции
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -25,6 +28,9 @@ namespace BackendApi.Controllers
             return Ok(Transaction);
         }
 
+        /// <summary>
+        /// Вывод Транзакции по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -51,11 +57,10 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Триназакция</param>
+        /// <param name="transaction">Триназакция</param>
         /// <returns></returns>
-
+        ///
         // POST api/<UsersController>
-
         [HttpPost]
         public IActionResult Add(CreateTransactionRequest transaction)
         {
@@ -65,6 +70,25 @@ namespace BackendApi.Controllers
             return Ok(transactionDto);
         }
 
+        /// <summary>
+        /// Обновление записи транзакции
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     {
+        ///        "User_id" : 4326,
+        ///        "Income" : 3443,
+        ///        "Expenses" : -12345,
+        ///        "Date_time" : 2024-01-19T08:57:13.353Z,
+        ///        "Categories_id" : 438054
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="transaction">Транзакция</param>
+        /// <returns></returns>
+        /// 
+        // PUT api/<AdStatusConroller>
         [HttpPut]
         public IActionResult Update(Transaction transaction)
         {
@@ -74,6 +98,9 @@ namespace BackendApi.Controllers
             return Ok(transactionDto);
         }
 
+        /// <summary>
+        /// Удаление записи транзакции
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

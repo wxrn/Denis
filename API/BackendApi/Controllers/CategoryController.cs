@@ -17,6 +17,9 @@ namespace BackendApi.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Вывод информации о категориях
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -24,6 +27,9 @@ namespace BackendApi.Controllers
             return Ok(Category_Types);
         }
 
+        /// <summary>
+        /// Вывод категорий по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -46,7 +52,7 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Категории</param>
+        /// <param name="category">Категории</param>
         /// <returns></returns>
 
         // POST api/<UsersController>
@@ -59,6 +65,21 @@ namespace BackendApi.Controllers
             return Ok(categoryTypeDto);
         }
 
+        /// <summary>
+        /// Обновление записи категорий
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     {
+        ///        "Name" : "Образование"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="category">Категории</param>
+        /// <returns></returns>
+        ///
+        // PUT api/<UsersController>
         [HttpPut]
         public IActionResult Update(CategoryType categoryType)
         {
@@ -68,6 +89,9 @@ namespace BackendApi.Controllers
             return Ok(categoryTypeDto);
         }
 
+        /// <summary>
+        /// Удаление записи о категориях
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

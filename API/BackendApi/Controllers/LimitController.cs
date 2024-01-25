@@ -18,6 +18,9 @@ namespace BackendApi.Controllers
             Context = context;
         }
 
+        /// <summary>
+        /// Вывод информации о лимите
+        /// </summary>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -25,6 +28,9 @@ namespace BackendApi.Controllers
             return Ok(Limit);
         }
 
+        /// <summary>
+        /// Вывод лимита по ID
+        /// </summary>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -52,9 +58,9 @@ namespace BackendApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="model">Лимит</param>
+        /// <param name="limit">Лимит</param>
         /// <returns></returns>
-
+        ///
         // POST api/<UsersController>
         [HttpPost]
         public IActionResult Add(CreateLimitRequest limit)
@@ -65,6 +71,26 @@ namespace BackendApi.Controllers
             return Ok(limitDto);
         }
 
+        /// <summary>
+        /// Обновление записи о лимите
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        ///
+        ///     {
+        ///        "User_id" : 9843,
+        ///        "Type" : "Продукты",
+        ///        "Date_time" : 08.03.2017,
+        ///        "Sum" : 3274,
+        ///        "Comment" : "Операция прошла успешна",
+        ///        "Categories_id" : 43857
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="limit">Лимит</param>
+        /// <returns></returns>
+        ///
+        // PUT api/<UsersController>
         [HttpPut]
         public IActionResult Update(Limit limit)
         {
@@ -74,6 +100,9 @@ namespace BackendApi.Controllers
             return Ok(limit);
         }
 
+        /// <summary>
+        /// Удаление записи о лимите
+        /// </summary>
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
