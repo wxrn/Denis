@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BackendApi</name>
+    </assembly>
+    <members>
+        <member name="M:BackendApi.Controllers.BudgetController.Add(BackendApi.Contracts.Budget.CreateBudgetRequest)">
+             <summary>
+             Создание бюджета 
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "Start_date" : 22.09.2003,
+                    "End_date" : 24.10.2003,
+                    "User_id" : 5549,
+                    "Size" : 78342
+                 }
+            
+             </remarks>
+             <param name="model">Бюджет</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.CategoryController.Add(BackendApi.Contracts.Category.CreateCategoryRequest)">
+             <summary>
+             Создание новой категории
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "Name" : "Образование"
+                 }
+            
+             </remarks>
+             <param name="model">Категории</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.LimitController.Add(BackendApi.Contracts.Limit.CreateLimitRequest)">
+             <summary>
+             Создание Лимита
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "Type" : "",
+                    "User_id" : 43983,
+                    "Name" : "Вацок",
+                    "Starting_balance" : 4576345,
+                    "Date_opened" : 07.11.2013,
+                    "Categories_id" : 43859
+                 }
+            
+             </remarks>
+             <param name="model">Лимит</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.OperationController.Add(BackendApi.Contracts.Operation.CreateOperationRequest)">
+             <summary>
+             Создание Операции
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "User_id" : 9843,
+                    "Type" : "Продукты",
+                    "Date_time" : 08.03.2017,
+                    "Sum" : 3274,
+                    "Comment" : "Операция прошла успешна",
+                    "Categories_id" : 43857
+                 }
+            
+             </remarks>
+             <param name="model">Операции</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.OperationController.Update(BackendApi.Contracts.Operation.CreateOperationRequest)">
+             <summary>
+             Создание Операции
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "User_id" : 9843,
+                    "Type" : "Продукты",
+                    "Date_time" : 08.03.2017,
+                    "Sum" : 3274,
+                    "Comment" : "Операция прошла успешна",
+                    "Categories_id" : 43857
+                 }
+            
+             </remarks>
+             <param name="model">Операции</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.TransactionController.Add(BackendApi.Contracts.Transaction.CreateTransactionRequest)">
+             <summary>
+             Создание Транзакции 
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "User_id" : 4326,
+                    "Income" : 3443,
+                    "Expenses" : -12345,
+                    "Date_time" : 2024-01-19T08:57:13.353Z,
+                    "Categories_id" : 438054
+                 }
+            
+             </remarks>
+             <param name="model">Триназакция</param>
+             <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.UserController.GetAll">
+            <summary>
+            Вывод информации о пользователе
+            </summary>
+            /// <remarks>
+             Пример запроса:
+                    {
+                        "userName" : "Bacok",
+                        "age" : 18,
+                        "passwords" : "12345",
+                        "email" : "Иванов@gmail.com"
+                    }
+            </remarks>
+            <param name="model">Пользователь</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackendApi.Controllers.UserController.Add(BackendApi.Contracts.User.CreateUserRequest)">
+             <summary>
+             Создание нового пользователя
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 {
+                    "userName" : "Bacok",
+                    "age" : 18,
+                    "passwords" : "12345",
+                    "email" : "Иванов@gmail.com"
+                 }
+            
+             </remarks>
+             <param name="model">Пользователь</param>
+             <returns></returns>
+        </member>
+    </members>
+</doc>
